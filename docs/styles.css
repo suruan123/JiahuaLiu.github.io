@@ -1,0 +1,69 @@
+:root {
+  color-scheme: light;
+  --ink: #202124;
+  --muted: #555b65;
+  --line: #e1e4e8;
+  --link: #245580;
+  font-family: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #fff;
+  color: var(--ink);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; }
+h1, h2, h3, p { margin: 0; }
+a { color: var(--link); text-underline-offset: 4px; }
+button { font: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+
+.wrap { width: min(820px, calc(100% - 64px)); margin-inline: auto; }
+.site-header { border-bottom: 1px solid var(--line); }
+.header-inner { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { color: var(--ink); font-size: 16px; font-weight: 650; letter-spacing: -.02em; text-decoration: none; }
+nav { display: flex; gap: 26px; }
+nav a, .site-footer a { padding-block: 12px; color: var(--muted); font-size: 14px; text-decoration: none; }
+nav a:hover, .site-footer a:hover { color: var(--link); text-decoration: underline; }
+.skip-link { position: absolute; top: 12px; left: 12px; z-index: 1; padding: 8px 12px; background: #fff; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+
+.hero { padding-block: clamp(44px, 6vw, 76px) clamp(40px, 5vw, 60px); }
+.hero h1 { font-size: clamp(2.7rem, 6vw, 4.2rem); font-weight: 650; line-height: 1.08; letter-spacing: -.055em; }
+.affiliation { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-top: 16px; font-size: 16px; font-weight: 600; line-height: 1.5; }
+.affiliation span { color: var(--muted); font-size: 14px; font-weight: 400; }
+.intro { max-width: 42em; margin-top: 19px; color: var(--muted); font-size: 16px; line-height: 1.9; }
+
+.section-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; padding-bottom: 14px; }
+.section-title h2, .contact h2 { font-size: 23px; font-weight: 640; line-height: 1.35; }
+.section-title p, .topic-en { color: var(--muted); font-size: 13px; }
+.research-list { border-bottom: 1px solid var(--line); }
+.research-topic { display: grid; grid-template-columns: minmax(185px, 1fr) 2fr; align-items: baseline; gap: 20px; padding-block: 19px; border-top: 1px solid var(--line); }
+.research-topic h3 { font-size: 16px; font-weight: 620; }
+.topic-en { margin-top: 5px; line-height: 1.45; }
+.topic-description { color: var(--muted); font-size: 15px; line-height: 1.8; }
+
+.contact { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 14px 24px; padding-block: 36px; }
+.contact p { margin-top: 7px; color: var(--muted); font-size: 14px; }
+.contact-actions { position: relative; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 13px; max-width: 100%; }
+.email-link { padding-block: 6px; overflow-wrap: anywhere; font-size: 14px; }
+.email-link:hover { color: #153c5f; }
+.email-link span[aria-hidden] { display: inline-block; margin-left: 2px; }
+.button-copy { min-height: 36px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--muted); font-size: 13px; white-space: nowrap; cursor: pointer; }
+.button-copy:hover { border-color: #a3afba; color: var(--link); }
+.copy-status { position: absolute; top: 100%; left: 0; padding-top: 4px; color: var(--muted); font-size: 12px; }
+.site-footer { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding-block: 9px 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+@media (max-width: 560px) {
+  .wrap { width: calc(100% - 40px); }
+  nav { gap: 16px; }
+  .affiliation { display: grid; }
+  .hero { padding-block: 43px 38px; }
+  .intro { margin-top: 15px; }
+  .research-topic { grid-template-columns: 1fr; gap: 8px; padding-block: 15px; }
+  .contact { padding-block: 28px 36px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
